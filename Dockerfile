@@ -1,4 +1,4 @@
-FROM eclipse termurlin:17-jdk-alpine
+FROM openjdk:17
 EXPOSE 8082
 ENV APP_HOME /usr/src/app
 COPY target/*.jar $APP_HOME/app.jar 
