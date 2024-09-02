@@ -1,4 +1,5 @@
-FROM openjdk:latest 
+FROM eclipse termurlin: 17-jdk-alpine
 EXPOSE 8082
-ADD target/petclinic.war petclinic.war
-ENTRYPOINT ["java","-jar","/petclinic.war"]
+ENV APP_HOME /usr/src/app
+COPY target/*.jar $APP_HOME/app.jar 
+ENTRYPOINT ["java","-jar","app.jar"]
